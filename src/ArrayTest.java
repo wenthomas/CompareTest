@@ -1,3 +1,16 @@
+/**
+
+    @author thomaswen
+    @version 1.0
+    功能：对给定数组进行检测，筛选输出显示其中不成对的元素。
+
+    算法：
+            1，创建两个数组，数组arr用于保存目标数据，数组arr1用于存放对应的标记（0和1）
+            2，遍历主数组arr，找到其中成对的元素在数组arr1对应位置做标记
+            3，遍历主数组arr，输出显示未标记的（不成对的）数组元素
+ */
+
+
 public class ArrayTest {
     public static void main(String[] args){
 
