@@ -56,7 +56,7 @@ public class ArrayTest {
      *  3.todo：另外附加写一个方法将数组里相同的元素去重
      */
 
-    // 最高级的写法，时间效率o(n),空间效率o（n）
+    // 最高级的写法，时间效率o(n),空间效率o（1）
     public static int findSingle(int[] source) {
         int single = 0;
         for (int i : source) {
