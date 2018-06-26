@@ -42,13 +42,26 @@ public class ArrayTest {
             }
         }
 
+
+        System.out.print(String.format("single one : %d",findSingle(new int[] {1,1,2,4,4,2,5})));
+
+
     }
 
 
     /*
-     * todo:
+     *
      *  1.方法分离（main方法只为启动项目，对于业务和逻辑的编写，都应该封装到类或方法中）
-     *  2.此方法无误，最好的方式是使用异或（相同的异或为0）
-     *  3.另外附加写一个方法将数组里相同的元素去重
+     *  2.此方法无误，最好的方式是使用异或（相同的异或为0,0与任意一个与元素异或都是那个元素本身，可用二进制检验）
+     *  3.todo：另外附加写一个方法将数组里相同的元素去重
      */
+
+    // 最高级的写法，时间效率o(n),空间效率o（n）
+    public static int findSingle(int[] source) {
+        int single = 0;
+        for (int i : source) {
+            single = single ^ i;
+        }
+        return single;
+    }
 }
