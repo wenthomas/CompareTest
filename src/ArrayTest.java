@@ -43,9 +43,9 @@ public class ArrayTest {
         }
 
 
-        System.out.print(String.format("single one : %d",findSingle(new int[] {1,1,2,4,4,2,5})));
+        System.out.println(String.format("single one : %d",findSingle(new int[] {1,1,2,4,4,2,5})));
 
-
+        exchange(new Data(2,4));
     }
 
 
@@ -63,5 +63,33 @@ public class ArrayTest {
             single = single ^ i;
         }
         return single;
+    }
+
+    // 异或的另一种巧妙实现：现在要交换data里a，b的值
+    public static void exchange(Data data) {
+        System.out.println("exchange before:" + data);
+        data.a = data.a ^ data.b;
+        data.b = data.a ^ data.b;
+        data.a = data.b ^ data.a;
+        System.out.println("exchange after:" + data);
+    }
+}
+
+class Data {
+    public int a;
+
+    public int b;
+
+    public Data(int a, int b) {
+        this.a = a;
+        this.b = b;
+    }
+
+    @Override
+    public String toString() {
+        return "Data{" +
+                "a=" + a +
+                ", b=" + b +
+                '}';
     }
 }
